@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人购物车</title>
+    <link rel="stylesheet" href="paycart.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <button class="backtoindex">返回首页</button>
+
+
+        <button class="order">历史订单</button>
+    </div>
+    <div id="loading" style="display: none;">
+        <div class="loader"></div>
+    </div>
+    <div class="paycartlist">
+        <div class="producthead">
+            <ul>
+                <li><input type="checkbox" class="selectAll"></input></li>
+                <li>商品名</li>
+                <li class="pro-image">商品图片</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>小计</li>
+                <li class="right">移出购物车</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="checkout">
+        <span class="selectcount">已选：<span id="selectcount">0</span></span>
+        <span class="totalmoney">总计：<span id="totalmoney">0</span></span>
+        <span class="havemoney">剩余金额：</span>
+        <button class="pay">结算</button>
+    </div>
+
+    <script src="paycart.js"></script>
+    <script src="login-check.js"></script>
+    <script src="order.js"></script>
+    <script>
+        //不允许在5秒内重复刷新
+        banrefresh()
+        let whologin = paycartgetUser()
+        // console.log(whologin)
+        //从数据库读取用户购物车然后存到本地存储
+        // getUserpaycartfromdatabase(whologin)
+        //显示个人购物车
+        showUserpaycart(whologin)
+        //点击减少按钮
+        ReduceProduct(whologin)
+        //点击增加按钮
+        ADDProduct(whologin)
+        //商品小计
+        thisproductallcount(whologin)
+        //单选全选按钮
+        selectbutton(whologin)
+        //购买商品
+        checkoutselcetproduct(whologin)
+        //点击移除按钮
+        deleteproductfrompaycart(whologin)
+        //点击历史订单按钮
+        UserGoOrder(whologin)
+        //点击返回首页按钮
+        UserGoIndex(whologin)
+        //切去其他页面是将本地购物车的内容插入到数据库里
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'hidden') {
+                // localStorageInsertPaycart(whologin)
+            }
+            else {
+                updateCartDisplay(whologin)
+                thisproductallcountwhenback(whologin)
+            }
+        });
+
+        //页面关闭时将本地购物车的内容插入到数据库里
+        window.addEventListener('beforeunload', function (event) {
+            localStorageInsertPaycart(whologin)
+        });
+
+    </script>
+</body>
+
+</html>

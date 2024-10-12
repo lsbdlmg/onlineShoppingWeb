@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+a {
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.nav {
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+    font-size: 14px;
+    margin: 10px auto;
+
+}
+
+.nav .paycart {
+    float: left;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    background-color: #3f3f40;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 10px 0 30px;
+    margin: 0 0 0 10px;
+    background-image: url(./images/购物车.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.nav .paycart:hover {
+    color: orange;
+}
+
+.nav .backtoindex {
+    float: right;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    background-color: #3f3f40;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+    cursor: pointer;
+
+}
+
+.nav .backtoindex:hover {
+    color: orange;
+}
+
+.orderlist {
+    width: 850px;
+
+    background-color: #e4e3e6;
+    margin: auto;
+    text-align: center;
+}
+
+.orderlist .productbody .pro-image img {
+    width: 100px;
+    height: 100px;
+}
+
+.orderlist .productbody .pro-image:hover {
+    box-shadow: 1px 1px 10px 2px black;
+}
+
+.orderlist .productbody .pro-image {
+    padding: 0;
+    transition: box-shadow .3s;
+}
+
+.orderlist .producthead .pro-image img {
+    width: 100%;
+
+}
+
+.orderlist .producthead .pro-image {
+    padding: 0;
+
+}
+
+.orderlist .producthead {
+    background-color: #ffffff;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.orderlist .producthead li {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffffff;
+    font-size: 20px;
+    padding: 0 10px;
+    margin: 0 5px 0 0;
+}
+
+.orderlist .producthead .right {
+    margin: 0;
+}
+
+
+.orderlist .productbody {
+    background-color: #ffffff;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.orderlist .productbody li {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #ffffff;
+    font-size: 14px;
+    padding: 0 10px;
+    margin: 0 5px 0 0;
+}
+
+.orderlist .productbody .right {
+    margin: 0;
+}
+
+.orderlist .productbody .countdad {
+    display: inline-block;
+
+    width: 100px;
+    height: 100px;
+
+    position: relative;
+}
+
+.orderlist .productbody .delete {
+    cursor: pointer;
+}

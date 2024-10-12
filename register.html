@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <div class="reg-box">
+        <div class="head-box">
+            <h3>个人注册</h3>
+            <a href="http://8.134.159.233">返回主页</a>
+        </div>
+        <div class="body-box">
+            <h3>注册新用户
+                <a href="login.html" target="_blank">已有账号去登录</a>
+            </h3>
+            <div class="reg-form">
+                <ul>
+                    <li>
+                        <label for="inputEmail">QQ邮箱：</label>
+                        <input type="text" class="inputEmail" id="inputEmail" oninput="validateEmailInput()"
+                            onblur="validateEmailInput()">
+                        <br>
+                        <span id="emailError" style="color:red;"></span>
+                    </li>
+                    <li>
+                        <label for="inputpwd-1">密码：</label>
+                        <input type="password" class="inputpwd" id="inputpwd-1" oninput="validatePasswordInput()"
+                            onblur="validatePasswordInput()">
+                        <br>
+                        <span id="passwordError" style="color:red;"></span>
+                    </li>
+                    <li>
+                        <label for="inputpwd-2">再次输入密码：</label>
+                        <input type="password" class="inputpwd" id="inputpwd-2" oninput="validateConfirmPasswordInput()"
+                            onblur="validateConfirmPasswordInput()">
+                        <br>
+                        <span id="confirmPasswordError" style="color:red;"></span>
+                    </li>
+                    <li>
+                        <label for="inputName">昵称：</label>
+                        <input type="text" class="inputName" id="inputName" oninput="validateNicknameInput()"
+                            onblur="validateNicknameInput()">
+                        <br>
+                        <span id="nicknameError" style="color:red;"></span>
+                    </li>
+                    <li>
+                        <label for="inputcode">请输入验证码：</label>
+                        <input type="text" class="inputcode" id="inputcode">
+                        <br>
+                        <span id="codeError" style="color:red;"></span>
+
+                    </li>
+
+
+                </ul>
+
+                <div class="submit sendcode"><button onclick="sendVerificationCode(this)">发送验证码</button>
+                    <input type="submit" value="完成注册" onclick="submitForm(event)">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="register.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

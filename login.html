@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人登录</title>
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+    <div id="loading" style="display: none;">
+        <div class="loader"></div>
+    </div>
+    <div class="login-box">
+        <div class="head-box">
+            <h3>用户登录</h3>
+            <a href="index.html">返回主页</a>
+        </div>
+        <div class="body-box">
+            <h3>
+                <a href="register.html" target="_blank" class="register">没有账号去注册</a>
+                <a href="managerlogin.html" class="managelogin">我是管理员，去登录</a>
+            </h3>
+            <div class="login-form">
+                <ul>
+                    <li><label for="inputEmail">QQ邮箱：</label><input type="text" class="inputEmail" id="inputEmail"></li>
+                    <li><label for="inputpwd">密码：</label><input type="password" class="inputpwd" id="inputpwd"></li>
+                </ul>
+                <span class="message"></span>
+                <div class="submit">
+                    <button class="loginbutton">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login-check.js"></script>
+    <script>
+        const loginbutton = document.querySelector('.loginbutton')
+        loginbutton.addEventListener('click', function () {
+            userlogin()
+        })
+
+    </script>
+</body>
+
+</html>

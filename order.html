@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人历史订单</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+    <div class="nav">
+        <button class="backtoindex">返回首页</button>
+
+
+        <button class="paycart">购物车</button>
+    </div>
+    <div class="orderlist">
+        <div class="producthead">
+            <ul>
+                <li>商品名</li>
+                <li class="pro-image">商品图片</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>小计</li>
+                <li>订单状态</li>
+                <li class="right">删除订单</li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="paycart.js"></script>
+    <script src="order.js"></script>
+    <script>
+        //不允许在5秒内重复刷新
+        banrefresh()
+        let whologin = ordergetUser()
+        // console.log(whologin)
+        //点击购物车按钮
+        UserGoPaycart(whologin)
+        //点击返回首页按钮
+        UserGoIndex(whologin)
+        //展示用户历史订单
+        showUserorder(whologin)
+        //删除订单
+        deleteproductfromorder(whologin)
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'hidden') {
+                // localStorageInsertOrder(whologin)
+            }
+            else {
+                // localStorage.removeItem(`order_${whologin.Emailtext}`)
+                // getUserorderfromdatabase(whologin)
+
+            }
+        });
+
+        window.addEventListener('beforeunload', function (event) {
+
+            // localStorageInsertOrder(whologin)
+        });
+
+    </script>
+</body>
+
+
+
+</html>
