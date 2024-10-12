@@ -342,8 +342,8 @@ let transporter = nodemailer.createTransport({
     port: 465,            // QQ 邮箱的 SMTP 端口（SSL 端口）
     secure: true,         // 使用 SSL
     auth: {
-        user: '2501995333@qq.com',   // 你的 QQ 邮箱地址
-        pass: 'zvjkwsloxgtwdige',  // QQ 邮箱的授权码
+        user: '',   // 你的 QQ 邮箱地址
+        pass: '',  // QQ 邮箱的授权码
     }
 });
 
@@ -355,7 +355,7 @@ function generateVerificationCode() {
 // 发送验证码邮件的函数
 function sendVerificationEmail(recipientEmail, code) {
     let mailOptions = {
-        from: '2501995333@qq.com',  // 发送者邮箱
+        from: '',  // 发送者邮箱
         to: recipientEmail,         // 接收者邮箱
         subject: '注册验证码',        // 邮件标题
         text: `您的验证码是: ${code}`, // 邮件内容
@@ -701,7 +701,7 @@ app.post('/updateUserOrderIndatabase', (req, res) => {
 // 发送订单邮件的函数
 function sendOrderEmail(recipientEmail, message) {
     let mailOptions = {
-        from: '2501995333@qq.com',  // 发送者邮箱
+        from: '',  // 发送者邮箱
         to: recipientEmail,         // 接收者邮箱
         subject: '订单消息',        // 邮件标题
         text: `您的${message}已发货 `, // 邮件内容
